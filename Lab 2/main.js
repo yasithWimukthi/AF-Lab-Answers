@@ -39,3 +39,14 @@ const getValue3 = () => {
 };
 
 getValue3().then(value => console.log(value));
+
+// • Let’s try to chain these promises.
+
+getValue3().then(value => {
+    console.log(value);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(value + 5);
+        }, 1000);
+    });
+}).then(value => console.log(value));
