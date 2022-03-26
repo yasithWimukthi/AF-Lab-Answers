@@ -50,3 +50,19 @@ getValue3().then(value => {
         }, 1000);
     });
 }).then(value => console.log(value));
+
+
+// 4. Try exercise 1 with async/await.
+
+const getValue4 = async () => {
+    let value = 0;
+    await new Promise((resolve, reject) => {
+        setTimeout(() => {
+            value = 4;
+            resolve();
+        }, 1000);
+    });
+    return value;
+};
+
+getValue4().then(value => console.log(value));
