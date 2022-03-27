@@ -138,3 +138,59 @@ console.log(`Vehicle Count : ${Vehicle.VehicleCount}`);
 //             ANSWERS FOR QUESTION 5
 // ------------------------------------------------------------------------------
 
+// Try exercise 2 class, extends, get, set, and super keywords.
+// Create a class named Vehicle using a function.
+// • Add a property named type to the class (this.type). Assign a value to that variable
+// using a
+// constructor argument.
+
+class Vehicle2 {
+    static VehicleCount = 0;
+
+    constructor(type) {
+        this.type = type;
+        ++Vehicle2.VehicleCount;
+    }
+
+    // ‘Vehicle is driving’ in the function body
+    drive() {
+        console.log(`Vehicle2 is driving`);
+    }
+
+    // • Add VehicleCount (Vehicle.VehicleCount) as a static variable
+    // • Increase the number of VehicleCount (Vehicle.VehicleCount++) by one inside the
+    // constructor.
+    static get VehicleCount() {
+        return Vehicle.VehicleCount;
+    }
+
+    static set VehicleCount(value) {
+        Vehicle.VehicleCount = value;
+    }
+}
+
+// • Create an object from Vehicle class (new Vehicle) and check static variable value, type
+// property value and function work
+const vehicle2 = new Vehicle2('car');
+vehicle2.drive();
+console.log(`Vehicle Count : ${Vehicle2.VehicleCount}`);
+
+// Create a class named Car and extend the class Vehicle
+class Car2 extends Vehicle2 {
+    constructor(type) {
+        super(type);
+    }
+
+    // Add a new method called balanceWheels to Car and print ‘Wheels are balanced’ in
+    // the
+    // class body.
+    balanceWheels() {
+        console.log(`Wheels are balanced`);
+    }
+}
+
+const car2 = new Car2('car');
+car2.balanceWheels();
+car2.drive();
+console.log(`Vehicle Count : ${Vehicle2.VehicleCount}`);
+
