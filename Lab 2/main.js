@@ -194,3 +194,5 @@ car2.balanceWheels();
 car2.drive();
 console.log(`Vehicle Count : ${Vehicle2.VehicleCount}`);
 
+// further reading: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+// https://wimukthiyasith.medium.com/object-oriented-javascript-62494f5f825d
